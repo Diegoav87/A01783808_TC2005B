@@ -1,4 +1,4 @@
-function bubbleSort(arr) {
+function ordenAlfabetico(arr) {
     if (arr.length === 0) {
         return arr;
     }
@@ -7,7 +7,9 @@ function bubbleSort(arr) {
 
     for (let i = 0; i < sorted.length; i++) {
         for (let j = i; j < sorted.length; j++) {
-            if (sorted[i] > sorted[j]) {
+
+
+            if (sorted[i].localeCompare(sorted[j]) !== -1) {
                 const temp = sorted[i];
                 sorted[i] = sorted[j];
                 sorted[j] = temp;
@@ -18,14 +20,14 @@ function bubbleSort(arr) {
     return sorted;
 }
 
-const array1 = [4, 1, 7, 0, 2, -3, 6, 0, -1];
-const result1 = bubbleSort(array1);
-console.log(result1);
+const arr = ["hola", "buenas", "tardes"];
+const result = ordenAlfabetico(arr);
+console.log(result);
 
-const array2 = [1, 1, 0, 2, -1, -1];
-const result2 = bubbleSort(array2);
+const arr2 = ["hello", "how", "Are", "you"];
+const result2 = ordenAlfabetico(arr2);
 console.log(result2);
 
-const array3 = [-5, -9, -3, 68, 100, 1, 5];
-const result3 = bubbleSort(array3);
+const arr3 = ["", "dog", "pig", "cat"];
+const result3 = ordenAlfabetico(arr3);
 console.log(result3);

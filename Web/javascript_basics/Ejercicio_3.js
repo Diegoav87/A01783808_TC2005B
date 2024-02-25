@@ -9,22 +9,20 @@ function invertirNuevoArreglo(arr) {
 }
 
 const arr = [1, 2, 3, 4, 5];
-const newArr = invertirNuevoArreglo(arr);
-console.log(newArr);
+const result = invertirNuevoArreglo(arr);
+console.log(result);
 
 function invertirMismoArreglo(arr) {
-    let j = 0;
 
-    for (let i = arr.length - 1; i >= 0; i--) {
+    for (let i = 0; i < arr.length / 2; i++) {
         temp = arr[i];
-        arr[i] = arr[j]
-        arr[j] = temp;
-        j++;
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
     }
 
     return arr;
 }
 
 const arr2 = [1, 2, 3, 4, 5];
-const newArr2 = invertirMismoArreglo(arr);
-console.log(newArr2);
+const result2 = invertirMismoArreglo(arr2);
+console.log(result2);
